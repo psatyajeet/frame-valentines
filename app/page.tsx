@@ -10,7 +10,7 @@ const frameMetadata = getFrameMetadata({
   ],
   image: `${NEXT_PUBLIC_URL}/frame_cupid.png`,
   input: {
-    text: 'What do you want to say?',
+    text: 'What do you want to say? Please be nice!',
   },
   post_url: `${NEXT_PUBLIC_URL}/api/frame`,
 });
