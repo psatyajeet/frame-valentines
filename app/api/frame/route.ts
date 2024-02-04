@@ -1,13 +1,14 @@
-import { FrameRequest, getFrameMessage, getFrameHtmlResponse } from '@coinbase/onchainkit';
+import { FrameRequest, getFrameHtmlResponse, getFrameMessage } from '@coinbase/onchainkit';
 import { NextRequest, NextResponse } from 'next/server';
 import { NEXT_PUBLIC_URL } from '../../config';
+import { neynarApiKey } from '../../lib/neynar';
 
 async function getResponse(req: NextRequest): Promise<NextResponse> {
   let accountAddress: string | undefined = '';
   let text: string | undefined = '';
 
   const body: FrameRequest = await req.json();
-  const { isValid, message } = await getFrameMessage(body, { neynarApiKey: 'NEYNAR_ONCHAIN_KIT' });
+  const { isValid, message } = await getFrameMessage(body, { neynarApiKey: neynarApiKey });
 
   if (isValid) {
     accountAddress = message.interactor.verified_accounts[0];
@@ -16,23 +17,18 @@ async function getResponse(req: NextRequest): Promise<NextResponse> {
   if (message?.input) {
     text = message.input;
   }
-
-  if (message?.button === 2) {
-    return NextResponse.redirect(
-      'https://www.google.com/search?q=cute+dog+pictures&tbm=isch&source=lnms',
-      { status: 302 },
-    );
-  }
-
   return new NextResponse(
     getFrameHtmlResponse({
       buttons: [
         {
-          label: `🌲 Text: ${text}`,
+          label: `Send it! ❤️ "${text}"`,
         },
       ],
-      image: `${NEXT_PUBLIC_URL}/park-2.png`,
-      post_url: `${NEXT_PUBLIC_URL}/api/frame`,
+      image: `${NEXT_PUBLIC_URL}/frame_cupid.png`,
+      input: {
+        text: 'Who do you want to send it to? Include the @',
+      },
+      post_url: `${NEXT_PUBLIC_URL}/api/send?text=${text}`, // <------
     }),
   );
 }
