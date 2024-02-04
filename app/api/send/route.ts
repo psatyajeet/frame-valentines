@@ -35,7 +35,7 @@ async function getResponse(req: NextRequest): Promise<NextResponse> {
     username = username.replace('@', '');
   }
 
-  const msgText = req.nextUrl.searchParams.get('text') || 'Hello, from Neynar';
+  const msgText = req.nextUrl.searchParams.get('text') || 'you are based!';
 
   const response = await sendCast(username, msgText);
 
