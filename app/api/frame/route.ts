@@ -17,6 +17,21 @@ async function getResponse(req: NextRequest): Promise<NextResponse> {
   if (message?.input) {
     text = message.input;
   }
+
+  if (!text) {
+    return new NextResponse(
+      getFrameHtmlResponse({
+        buttons: [
+          {
+            label: `You didn't write anything 😭! Try again."`,
+          },
+        ],
+        image: `${NEXT_PUBLIC_URL}/frame_cupid.png`,
+        post_url: `${NEXT_PUBLIC_URL}`,
+      }),
+    );
+  }
+
   return new NextResponse(
     getFrameHtmlResponse({
       buttons: [

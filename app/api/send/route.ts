@@ -33,6 +33,21 @@ async function getResponse(req: NextRequest): Promise<NextResponse> {
   if (message?.input) {
     username = message.input;
     username = username.replace('@', '');
+    username = username.charAt(0).toLowerCase() + username.slice(1);
+  }
+
+  if (!username) {
+    return new NextResponse(
+      getFrameHtmlResponse({
+        buttons: [
+          {
+            label: `You didn't enter a username 😭! Try again."`,
+          },
+        ],
+        image: `${NEXT_PUBLIC_URL}/frame_cupid.png`,
+        post_url: `${NEXT_PUBLIC_URL}`,
+      }),
+    );
   }
 
   const msgText = req.nextUrl.searchParams.get('text') || 'you are based!';
