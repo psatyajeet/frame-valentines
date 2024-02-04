@@ -8,11 +8,11 @@ const frameMetadata = getFrameMetadata({
       label: 'Say nice things about me :)',
     },
     {
-      label: 'Redirect to cute dog pictures',
+      label: 'Receive your own valentines!',
       action: 'post_redirect',
     },
   ],
-  image: `${NEXT_PUBLIC_URL}/park-1.png`,
+  image: `${NEXT_PUBLIC_URL}/frame_cupid.png`,
   input: {
     text: 'Send me a valentine!',
   },
@@ -25,7 +25,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'CupidCast',
     description: 'Framed love notes',
-    images: [`${NEXT_PUBLIC_URL}/park-1.png`],
+    images: [`${NEXT_PUBLIC_URL}/frame_cupid.png`],
   },
   other: {
     ...frameMetadata,
