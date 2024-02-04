@@ -5,7 +5,7 @@ import { NEXT_PUBLIC_URL } from './config';
 const frameMetadata = getFrameMetadata({
   buttons: [
     {
-      label: 'Tell me the story',
+      label: 'Say nice things about me :)',
     },
     {
       label: 'Redirect to cute dog pictures',
@@ -14,17 +14,17 @@ const frameMetadata = getFrameMetadata({
   ],
   image: `${NEXT_PUBLIC_URL}/park-1.png`,
   input: {
-    text: 'Tell me a boat story',
+    text: 'Send me a valentine!',
   },
   post_url: `${NEXT_PUBLIC_URL}/api/frame`,
 });
 
 export const metadata: Metadata = {
-  title: 'zizzamia.xyz',
-  description: 'LFG',
+  title: 'CupidCast',
+  description: 'Framed love notes',
   openGraph: {
-    title: 'zizzamia.xyz',
-    description: 'LFG',
+    title: 'CupidCast',
+    description: 'Framed love notes',
     images: [`${NEXT_PUBLIC_URL}/park-1.png`],
   },
   other: {
@@ -35,7 +35,7 @@ export const metadata: Metadata = {
 export default function Page() {
   return (
     <>
-      <h1>zizzamia.xyz</h1>
+      <h1>CupidCast</h1>
     </>
   );
 }
