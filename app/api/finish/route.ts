@@ -19,7 +19,6 @@ async function getResponse(req: NextRequest): Promise<NextResponse> {
 
   if (message?.button === 2) {
     const castHash = req.nextUrl.searchParams.get('hash') || '';
-    console.log(castHash);
 
     return NextResponse.redirect(`https://www.warpcast.com/pal/${castHash}`, { status: 302 });
   }

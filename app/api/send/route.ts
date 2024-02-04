@@ -40,7 +40,6 @@ async function getResponse(req: NextRequest): Promise<NextResponse> {
   const response = await sendCast(username, msgText);
 
   if (response?.hash) {
-    console.log(response.hash);
     return new NextResponse(
       getFrameHtmlResponse({
         buttons: [

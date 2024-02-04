@@ -5,7 +5,7 @@ import { NEXT_PUBLIC_URL } from './config';
 const frameMetadata = getFrameMetadata({
   buttons: [
     {
-      label: 'Pick who to send it to ->',
+      label: 'Submit message. Pick your recipient on the next page ->',
     },
   ],
   image: `${NEXT_PUBLIC_URL}/frame_cupid.png`,
