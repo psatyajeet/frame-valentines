@@ -5,12 +5,12 @@ import { NEXT_PUBLIC_URL } from './config';
 const frameMetadata = getFrameMetadata({
   buttons: [
     {
-      label: 'Submit message. Pick your recipient on the next page ->',
+      label: 'Next ->',
     },
   ],
   image: `${NEXT_PUBLIC_URL}/frame_cupid.png`,
   input: {
-    text: 'What do you want to say? Please be nice!',
+    text: 'What do you want to say? Be nice!',
   },
   post_url: `${NEXT_PUBLIC_URL}/api/frame`,
 });
