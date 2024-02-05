@@ -14,7 +14,7 @@ async function sendCast(username: string, message: string) {
   const response = await client.publishCast(
     signerUUID,
     `❤️ @${username}, you got an anon Valentine!  ❤️\n\n"${message}"`,
-    { replyTo: '0x0d617a287ba93354c7b6089c49ad8f2c5543eadc' },
+    { replyTo: 'https://warpcast.com/pal/0x70d70d74' },
   );
 
   return response;
