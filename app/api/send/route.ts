@@ -45,7 +45,7 @@ async function getResponse(req: NextRequest): Promise<NextResponse> {
           },
         ],
         image: `${NEXT_PUBLIC_URL}/frame_cupid.png`,
-        post_url: `${NEXT_PUBLIC_URL}`,
+        post_url: `${NEXT_PUBLIC_URL}/api/finish`,
       }),
     );
   }
