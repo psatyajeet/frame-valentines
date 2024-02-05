@@ -13,7 +13,7 @@ const client = new NeynarAPIClient(neynarApiKey);
 async function sendCast(username: string, message: string) {
   const response = await client.publishCast(
     signerUUID,
-    `❤️ @${username}, you got an anon Valentine!  ❤️\n\n"${message} \n\n Send your own here: https://warpcast.com/pal/0x946355e3"`,
+    `❤️ @${username}, you got an anon Valentine!  ❤️\n\n"${message} \n\n Send your own here: https://warpcast.com/pal/0xf74dcc3f`,
   );
 
   return response;
