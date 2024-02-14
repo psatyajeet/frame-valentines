@@ -63,10 +63,10 @@ async function getResponse(req: NextRequest): Promise<NextResponse> {
             label: 'Send another! ❤️',
             action: 'post',
           },
-          {
-            label: 'See valentine',
-            action: 'post_redirect',
-          },
+          // {
+          //   label: 'See valentine',
+          //   action: 'post_redirect',
+          // },
         ],
         image: `${NEXT_PUBLIC_URL}/frame_cupid.png`,
         post_url: `${NEXT_PUBLIC_URL}/api/finish?hash=${response.hash}`,

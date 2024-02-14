@@ -17,11 +17,11 @@ async function getResponse(req: NextRequest): Promise<NextResponse> {
     return NextResponse.redirect(`${NEXT_PUBLIC_URL}`, { status: 302 });
   }
 
-  if (message?.button === 2) {
-    const castHash = req.nextUrl.searchParams.get('hash') || '';
+  // if (message?.button === 2) {
+  //   const castHash = req.nextUrl.searchParams.get('hash') || '';
 
-    return NextResponse.redirect(`https://www.warpcast.com/pal/${castHash}`, { status: 302 });
-  }
+  //   return NextResponse.redirect(`https://www.warpcast.com/pal/${castHash}`, { status: 302 });
+  // }
 
   return NextResponse.redirect(`${NEXT_PUBLIC_URL}`, { status: 302 });
 }
